@@ -1,0 +1,6 @@
+{
+  "name": "CerviScan AI - Cervical Cancer Risk Assessment & Analytics",
+  "description": "Full-stack medical machine learning platform for cervical cancer risk stratification, clinical insights, and predictive diagnostics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

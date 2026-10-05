@@ -1,0 +1,323 @@
+{
+  "features": [
+    "Age",
+    "Number of sexual partners",
+    "First sexual intercourse",
+    "Num of pregnancies",
+    "Smokes",
+    "Smokes (years)",
+    "Smokes (packs/year)",
+    "Hormonal Contraceptives",
+    "Hormonal Contraceptives (years)",
+    "IUD",
+    "IUD (years)",
+    "STDs",
+    "STDs (number)",
+    "STDs:condylomatosis",
+    "STDs:cervical condylomatosis",
+    "STDs:vaginal condylomatosis",
+    "STDs:vulvo-perineal condylomatosis",
+    "STDs:syphilis",
+    "STDs:pelvic inflammatory disease",
+    "STDs:genital herpes",
+    "STDs:molluscum contagiosum",
+    "STDs:AIDS",
+    "STDs:HIV",
+    "STDs:Hepatitis B",
+    "STDs:HPV",
+    "STDs: Number of diagnosis",
+    "Dx:Cancer",
+    "Dx:CIN",
+    "Dx:HPV",
+    "Dx",
+    "Hinselmann",
+    "Schiller",
+    "Citology"
+  ],
+  "selected_features": [
+    "Age",
+    "Number of sexual partners",
+    "First sexual intercourse",
+    "Num of pregnancies",
+    "Smokes",
+    "Smokes (years)",
+    "Smokes (packs/year)",
+    "Hormonal Contraceptives",
+    "Hormonal Contraceptives (years)",
+    "IUD",
+    "IUD (years)",
+    "STDs",
+    "STDs (number)",
+    "STDs:condylomatosis",
+    "STDs:vaginal condylomatosis",
+    "STDs:vulvo-perineal condylomatosis",
+    "STDs:syphilis",
+    "STDs:pelvic inflammatory disease",
+    "STDs:genital herpes",
+    "STDs:molluscum contagiosum",
+    "STDs:HIV",
+    "STDs:Hepatitis B",
+    "STDs:HPV",
+    "STDs: Number of diagnosis",
+    "Dx:Cancer",
+    "Dx:CIN",
+    "Dx:HPV",
+    "Dx",
+    "Hinselmann",
+    "Schiller",
+    "Citology"
+  ],
+  "threshold": 0.3,
+  "feature_importances": [
+    {
+      "name": "Schiller",
+      "score": 0.403633
+    },
+    {
+      "name": "Hinselmann",
+      "score": 0.168399
+    },
+    {
+      "name": "Citology",
+      "score": 0.087889
+    },
+    {
+      "name": "STDs",
+      "score": 0.031341
+    },
+    {
+      "name": "Dx",
+      "score": 0.029373
+    },
+    {
+      "name": "Age",
+      "score": 0.026305
+    },
+    {
+      "name": "Num of pregnancies",
+      "score": 0.025737
+    },
+    {
+      "name": "STDs: Number of diagnosis",
+      "score": 0.023843
+    },
+    {
+      "name": "STDs (number)",
+      "score": 0.022054
+    },
+    {
+      "name": "Hormonal Contraceptives (years)",
+      "score": 0.020453
+    },
+    {
+      "name": "First sexual intercourse",
+      "score": 0.020342
+    },
+    {
+      "name": "Dx:Cancer",
+      "score": 0.019535
+    },
+    {
+      "name": "Dx:CIN",
+      "score": 0.018275
+    },
+    {
+      "name": "Dx:HPV",
+      "score": 0.016617
+    },
+    {
+      "name": "Number of sexual partners",
+      "score": 0.014933
+    },
+    {
+      "name": "STDs:condylomatosis",
+      "score": 0.010054
+    },
+    {
+      "name": "IUD (years)",
+      "score": 0.009675
+    },
+    {
+      "name": "IUD",
+      "score": 0.009597
+    },
+    {
+      "name": "Hormonal Contraceptives",
+      "score": 0.008792
+    },
+    {
+      "name": "STDs:vulvo-perineal condylomatosis",
+      "score": 0.008709
+    },
+    {
+      "name": "STDs:genital herpes",
+      "score": 0.005888
+    },
+    {
+      "name": "Smokes",
+      "score": 0.004599
+    },
+    {
+      "name": "Smokes (years)",
+      "score": 0.00431
+    },
+    {
+      "name": "Smokes (packs/year)",
+      "score": 0.004196
+    },
+    {
+      "name": "STDs:HIV",
+      "score": 0.002595
+    },
+    {
+      "name": "STDs:syphilis",
+      "score": 0.002411
+    },
+    {
+      "name": "STDs:vaginal condylomatosis",
+      "score": 0.000256
+    },
+    {
+      "name": "STDs:HPV",
+      "score": 0.000142
+    },
+    {
+      "name": "STDs:Hepatitis B",
+      "score": 3.5e-05
+    },
+    {
+      "name": "STDs:molluscum contagiosum",
+      "score": 1e-05
+    },
+    {
+      "name": "STDs:pelvic inflammatory disease",
+      "score": 1e-06
+    }
+  ],
+  "correlations": [
+    {
+      "name": "Schiller",
+      "correlation": 0.733204
+    },
+    {
+      "name": "Hinselmann",
+      "correlation": 0.547417
+    },
+    {
+      "name": "Citology",
+      "correlation": 0.327466
+    },
+    {
+      "name": "Dx:Cancer",
+      "correlation": 0.160905
+    },
+    {
+      "name": "Dx:HPV",
+      "correlation": 0.160905
+    },
+    {
+      "name": "Dx",
+      "correlation": 0.157607
+    },
+    {
+      "name": "STDs:genital herpes",
+      "correlation": 0.132526
+    },
+    {
+      "name": "STDs:HIV",
+      "correlation": 0.12688
+    },
+    {
+      "name": "Dx:CIN",
+      "correlation": 0.113172
+    },
+    {
+      "name": "STDs",
+      "correlation": 0.109099
+    },
+    {
+      "name": "STDs (number)",
+      "correlation": 0.098347
+    },
+    {
+      "name": "STDs: Number of diagnosis",
+      "correlation": 0.097449
+    },
+    {
+      "name": "STDs:vulvo-perineal condylomatosis",
+      "correlation": 0.088902
+    },
+    {
+      "name": "STDs:condylomatosis",
+      "correlation": 0.08639
+    },
+    {
+      "name": "Hormonal Contraceptives (years)",
+      "correlation": 0.079388
+    },
+    {
+      "name": "Smokes (years)",
+      "correlation": 0.062044
+    },
+    {
+      "name": "Age",
+      "correlation": 0.055956
+    },
+    {
+      "name": "IUD",
+      "correlation": 0.053194
+    },
+    {
+      "name": "Num of pregnancies",
+      "correlation": 0.046416
+    },
+    {
+      "name": "STDs:syphilis",
+      "correlation": -0.043061
+    },
+    {
+      "name": "IUD (years)",
+      "correlation": 0.033275
+    },
+    {
+      "name": "Smokes",
+      "correlation": 0.029356
+    },
+    {
+      "name": "Smokes (packs/year)",
+      "correlation": 0.024882
+    },
+    {
+      "name": "STDs:vaginal condylomatosis",
+      "correlation": -0.020108
+    },
+    {
+      "name": "STDs:HPV",
+      "correlation": -0.0142
+    },
+    {
+      "name": "STDs:pelvic inflammatory disease",
+      "correlation": -0.010034
+    },
+    {
+      "name": "STDs:molluscum contagiosum",
+      "correlation": -0.010034
+    },
+    {
+      "name": "STDs:Hepatitis B",
+      "correlation": -0.010034
+    },
+    {
+      "name": "Hormonal Contraceptives",
+      "correlation": 0.00775
+    },
+    {
+      "name": "First sexual intercourse",
+      "correlation": 0.007264
+    },
+    {
+      "name": "Number of sexual partners",
+      "correlation": -0.001442
+    }
+  ]
+}
