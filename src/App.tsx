@@ -27,40 +27,53 @@ export default function App() {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [fetchError, setFetchError] = useState<string | null>(null);
 
-  const loadAllData = async (isInitial = false) => {
+  const fetchJsonSafely = async (url: string) => {
+    const res = await fetch(url);
+    const contentType = res.headers.get('content-type') || '';
+    if (!res.ok) {
+      if (contentType.includes('application/json')) {
+        const errJson = await res.json();
+        throw new Error(errJson.error || `HTTP ${res.status}`);
+      }
+      throw new Error(`HTTP ${res.status} from ${url}`);
+    }
+    if (!contentType.includes('application/json')) {
+      throw new Error(`Server returned non-JSON response for ${url}`);
+    }
+    return res.json();
+  };
+
+  const loadAllData = async (isInitial = false, retryCount = 0) => {
     if (isInitial) setLoading(true);
     else setIsRefreshing(true);
     setFetchError(null);
 
     try {
-      const [statsRes, insightsRes, perfRes, patientsRes] = await Promise.all([
-        fetch('/api/stats'),
-        fetch('/api/insights'),
-        fetch('/api/model-performance'),
-        fetch('/api/patients?page=1&page_size=858')
-      ]);
-
-      if (!statsRes.ok || !insightsRes.ok || !perfRes.ok || !patientsRes.ok) {
-        throw new Error('Failed to load dataset and model artifacts from server');
-      }
-
       const [statsData, insightsData, perfData, patientsData] = await Promise.all([
-        statsRes.json(),
-        insightsRes.json(),
-        perfRes.json(),
-        patientsRes.json()
+        fetchJsonSafely('/api/stats'),
+        fetchJsonSafely('/api/insights'),
+        fetchJsonSafely('/api/model-performance'),
+        fetchJsonSafely('/api/patients?page=1&page_size=858')
       ]);
 
       setStats(statsData);
       setInsights(insightsData);
       setPerformance(perfData);
       setPatients(patientsData.patients || []);
-    } catch (err: any) {
-      console.error('Error fetching clinical data:', err);
-      setFetchError(err.message || 'Could not connect to model API server');
-    } finally {
       setLoading(false);
       setIsRefreshing(false);
+    } catch (err: any) {
+      console.error('Error fetching clinical data:', err);
+      if (isInitial && retryCount < 3) {
+        // Automatically retry after brief delay in case server is starting up
+        setTimeout(() => {
+          loadAllData(true, retryCount + 1);
+        }, 1200);
+      } else {
+        setFetchError(err.message || 'Could not connect to model API server');
+        setLoading(false);
+        setIsRefreshing(false);
+      }
     }
   };
 

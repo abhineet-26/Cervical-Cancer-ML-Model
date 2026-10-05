@@ -213,9 +213,18 @@ export const PredictionView: React.FC<PredictionViewProps> = ({
         body: JSON.stringify(payload)
       });
 
+      const contentType = res.headers.get('content-type') || '';
       if (!res.ok) {
-        const errData = await res.json();
-        throw new Error(errData.error || 'Prediction service error');
+        if (contentType.includes('application/json')) {
+          const errData = await res.json();
+          throw new Error(errData.error || 'Prediction service error');
+        } else {
+          throw new Error(`Server returned HTTP ${res.status}`);
+        }
+      }
+
+      if (!contentType.includes('application/json')) {
+        throw new Error('Received non-JSON response from prediction service');
       }
 
       const data: PredictionResponse = await res.json();
